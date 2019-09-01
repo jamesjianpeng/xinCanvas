@@ -1,7 +1,12 @@
-import XinCanvas from './line-chart'
+// import './add'
+// import './addJs'
+// import './polymorphism'
+import './package'
 
-new XinCanvas({
-  el: document.body,
-  HLine: [ 'one', 'two', 'three' ],
-  VLine: [ 1, 2, 3 ]
-})
+// import XinCanvas from './line-chart'
+//
+// new XinCanvas({
+//   el: document.body,
+//   HLine: [ 'one', 'two', 'three' ],
+//   VLine: [ 1, 2, 3 ]
+// })
