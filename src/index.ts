@@ -1,7 +1,7 @@
 // import './add'
 // import './addJs'
 // import './polymorphism'
-import './package'
+import './ts/abstract'
 
 // import XinCanvas from './line-chart'
 //

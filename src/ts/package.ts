@@ -30,6 +30,7 @@ interface CarType {
   _technicalDetails: string
 }
 
+
 class CarTs {
   public name: string
 
@@ -65,14 +66,14 @@ class CarTs {
   }
 
   getCarType () {
-    return this.getCarType
+    return this.carType
   }
 
   setNewEngine (engine: string) {
     this.engine = engine
   }
 
-  run (time: number, speed: number) {
+  run (time: number, speed: number): number {
     this.distance = this.distance + ( time * speed )
     return this.distance
   }
@@ -81,7 +82,7 @@ class CarTs {
     return this.distance
   }
 
-  private _setTechnicalDetails(technicalDetails: string) {
+  _setTechnicalDetails(technicalDetails: string) {
     this._technicalDetails = technicalDetails
   }
 }
@@ -146,6 +147,7 @@ class TruckTs extends CarTs {
   static readonly fuleContainer: number = 120
   static readonly _technicalDetails: string = 'Truck 牛xx'
   static carName: string = '无名'
+  truckNumber: number
   // static 的属性只能 通过 类名.staticProperty 进行访问，并且可以进行修改
   // static readonly 标识的属性只能读
 
@@ -165,6 +167,12 @@ class TruckTs extends CarTs {
       ...data
     }
     super(scope)
+    this.truckNumber = new Date().getTime()
+  }
+  /** description 对 CarTs 父类进行重写，输入参数 / 返回值 不能修改，内部实现可以修改 */
+  run (time: number, speed: number): number {
+    this.distance = this.distance + ( time * speed ) + 100
+    return this.distance
   }
 }
 
